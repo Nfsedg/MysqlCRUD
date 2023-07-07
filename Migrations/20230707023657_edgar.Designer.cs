@@ -9,7 +9,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Diesño.Migrations
 {
     [DbContext(typeof(AppDBCContext))]
-    [Migration("20230705232956_edgar")]
+    [Migration("20230707023657_edgar")]
     partial class edgar
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)

@@ -14,7 +14,7 @@ namespace Diesño.Context
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
 
-            optionsBuilder.UseMySQL("server=localhost; database=empleados; user=root; password=");
+            optionsBuilder.UseMySQL("server=localhost; Port=3307;database=empleados; user=root; password=edgar;CharSet=utf8;");
 
         }
 

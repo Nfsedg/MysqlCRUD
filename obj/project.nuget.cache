@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "5LqCnrV25B8Zd6Rah+AN55dcgEFecaVWl/ZUfxnRE01zEd5AScoJK0gHZL2ZMtJ5hFXSzzb5nG0j5n/FYYiiBg==",
+  "dgSpecHash": "Gd0yWrh96r4h4iSm+JGwT8enXboQCoOi5jiIVxib2jZmL/w+GNZin7kolN4Uae+IHxTeM695AVn98SVunYhxfg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\edgar\\Downloads\\Diesño\\Diesño\\Diesño\\Diesño.csproj",
+  "projectFilePath": "C:\\Users\\edgar\\MysqlCRUD\\Diesño.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\edgar\\.nuget\\packages\\bouncycastle.netcore\\1.8.5\\bouncycastle.netcore.1.8.5.nupkg.sha512",
     "C:\\Users\\edgar\\.nuget\\packages\\google.protobuf\\3.11.4\\google.protobuf.3.11.4.nupkg.sha512",
@@ -44,7 +44,11 @@
     "C:\\Users\\edgar\\.nuget\\packages\\system.security.permissions\\4.7.0\\system.security.permissions.4.7.0.nupkg.sha512",
     "C:\\Users\\edgar\\.nuget\\packages\\system.security.principal.windows\\4.7.0\\system.security.principal.windows.4.7.0.nupkg.sha512",
     "C:\\Users\\edgar\\.nuget\\packages\\system.text.encoding.codepages\\4.4.0\\system.text.encoding.codepages.4.4.0.nupkg.sha512",
-    "C:\\Users\\edgar\\.nuget\\packages\\system.windows.extensions\\4.7.0\\system.windows.extensions.4.7.0.nupkg.sha512"
+    "C:\\Users\\edgar\\.nuget\\packages\\system.windows.extensions\\4.7.0\\system.windows.extensions.4.7.0.nupkg.sha512",
+    "C:\\Users\\edgar\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\5.0.0\\microsoft.windowsdesktop.app.ref.5.0.0.nupkg.sha512",
+    "C:\\Users\\edgar\\.nuget\\packages\\microsoft.netcore.app.ref\\5.0.0\\microsoft.netcore.app.ref.5.0.0.nupkg.sha512",
+    "C:\\Users\\edgar\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\5.0.0\\microsoft.aspnetcore.app.ref.5.0.0.nupkg.sha512",
+    "C:\\Users\\edgar\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\5.0.17\\microsoft.netcore.app.host.win-x64.5.0.17.nupkg.sha512"
   ],
   "logs": []
 }

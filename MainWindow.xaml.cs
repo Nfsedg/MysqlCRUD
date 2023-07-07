@@ -42,7 +42,7 @@ namespace Diesño
         private void BtnAdd_Click(object sender, RoutedEventArgs e)
         {
             
-            string name = txtNombre.Name;
+            string name = txtNombre.Text;
             string apellido = txtApellido.Text;
             string correo = txtCorreo.Text;
 
@@ -65,11 +65,16 @@ namespace Diesño
                     Correo = correo,
                     FechaRegistro = DateTime.Now
                 };
-                services.Add(empleadoNew);
+                try
+                {
+                    services.Add(empleadoNew);
+                    messageBox("Se ha guardado los datos");
+                } catch(Exception ex) {
+                    messageBox(ex.Message);
+                }
                 txtNombre.Clear();
                 txtApellido.Clear();
                 txtCorreo.Clear();
-                messageBox("Se ha guardado los datos");
                 BtnAdd.IsEnabled = true;
                 BtnAdd.Background = newBackgroundBrush2;
                 BtnEdit.IsEnabled = true;
@@ -80,27 +85,57 @@ namespace Diesño
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            int id = int.Parse(txtId.Text);
-            Empleados empleado = services.Red(id);
+            try
+            {
+                int id = int.Parse(txtId.Text);
+                Empleados empleado = services.Red(id);
 
-            txtNombre.Text = empleado.Nombre;
-            txtCorreo.Text = empleado.Correo;
-            txtApellido.Text = empleado.Apellido;
-            txtFecha.Text = empleado.FechaRegistro.ToString();
-            string v = empleado.PkEmpleado.ToString();
-            txtId.Text = v;
+                txtNombre.Text = empleado.Nombre;
+                txtCorreo.Text = empleado.Correo;
+                txtApellido.Text = empleado.Apellido;
+                txtFecha.Text = empleado.FechaRegistro.ToString();
+                string v = empleado.PkEmpleado.ToString();
+                txtId.Text = v;
+            } catch (Exception ex)
+            {
+                messageBox(ex.Message);
+            }
         }
 
         private void BtnUpdate_Clic(object sender, RoutedEventArgs e)
         {
-            int id = int.Parse(txtId.Text);
+            try
+            {
+                int id = int.Parse(txtId.Text);
 
-            Empleados emplado = new Empleados();
-            txtApellido.Text = emplado.Apellido;
-            txtCorreo.Text = emplado.Correo;
-            txtNombre.Text = emplado.Nombre;
+                Empleados emplado = new Empleados();
+                emplado.Apellido = txtApellido.Text;
+                emplado.Correo = txtCorreo.Text;
+                emplado.Nombre = txtNombre.Text;
+                emplado.PkEmpleado = id;
 
-            services.Update(emplado);
+
+
+                services.Update(emplado);
+                messageBox("Datos actualizados");
+            } catch (Exception ex)
+            {
+                messageBox(ex.Message);
+            }
+        }
+
+        private void BtnDelete_Clic(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                int id = int.Parse(txtId.Text);
+                services.Delete(id);
+                messageBox("Eliminado");
+            }
+            catch (Exception ex)
+            {
+                messageBox(ex.Message);
+            }
         }
     }
 }

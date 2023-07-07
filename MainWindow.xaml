@@ -18,9 +18,9 @@
         <TextBox x:Name="txtFecha" HorizontalAlignment="Center" Height="30" Margin="0,303,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="260"/>
         <Label Content="Id" HorizontalAlignment="Left" Margin="76,350,0,0" VerticalAlignment="Top" FontSize="16"/>
         <TextBox x:Name="txtId" HorizontalAlignment="Left" Height="30" Margin="76,380,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="260"/>
-        <Button x:Name="BtnView" Content="Ver" HorizontalAlignment="Left" Height="30" Margin="70,424,0,0" VerticalAlignment="Top" Width="272" FontSize="16" Background="#FF2ECAFF"/>
-        <Button x:Name="BtnEdit" Content="Editar" HorizontalAlignment="Left" Height="30" Margin="70,494,0,0" VerticalAlignment="Top" Width="272" FontSize="16" Background="#FFEEEB34"/>
+        <Button x:Name="BtnView" Content="Ver" HorizontalAlignment="Left" Height="30" Margin="70,424,0,0" VerticalAlignment="Top" Width="272" FontSize="16" Background="#FF2ECAFF" Click="Button_Click"/>
+        <Button x:Name="BtnEdit" Content="Editar" HorizontalAlignment="Left" Height="30" Margin="70,494,0,0" VerticalAlignment="Top" Width="272" FontSize="16" Background="#FFEEEB34" Click="BtnUpdate_Clic"/>
         <Button x:Name="BtnAdd" Content="Agregar" HorizontalAlignment="Left" Height="30" Margin="70,459,0,0" VerticalAlignment="Top" Width="272" FontSize="16" Background="#FF24E842" Click="BtnAdd_Click"/>
-        <Button x:Name="Eliminar" Content="Eliminar" HorizontalAlignment="Left" Height="30" Margin="70,529,0,0" VerticalAlignment="Top" Width="272" FontSize="16" Background="#FFF43C3C"/>
+        <Button x:Name="Eliminar" Content="Eliminar" HorizontalAlignment="Left" Height="30" Margin="70,529,0,0" VerticalAlignment="Top" Width="272" FontSize="16" Background="#FFF43C3C" Click="BtnDelete_Clic"/>
     </Grid>
 </Window>

@@ -6,11 +6,22 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 
 namespace Diesño.Services
 {
     internal class EmpleadoServices
     {
+        public void messageBox(string message)
+        {
+            string messageBoxText = message;
+            string caption = "";
+            MessageBoxButton button = MessageBoxButton.OK;
+            MessageBoxImage icon = MessageBoxImage.None;
+            MessageBoxResult result;
+
+            result = MessageBox.Show(messageBoxText, caption, button, icon, MessageBoxResult.Yes);
+        }
         public void Add(Empleados request)
         {
 			try
@@ -32,7 +43,7 @@ namespace Diesño.Services
 			catch (Exception ex)
 			{
 
-				throw new Exception("Sucedió un error " + ex.Message);
+                throw new Exception("Sucedió un error " + ex.InnerException);
 			}
         }
 		public Empleados Red (int id)
@@ -58,19 +69,35 @@ namespace Diesño.Services
 				using(var _context = new AppDBCContext())
                 {
 					Empleados update = _context.Empleados.Find(request.PkEmpleado);
-					update = new Empleados()
-					{
-						Nombre = request.Nombre,
-						Apellido = request.Apellido,
-						Correo = request.Correo,
-						FechaRegistro = DateTime.Now
-					};
-					_context.Entry(update).State = EntityState.Modified;
-					//_context.Update(update);
+                    update.Nombre = request.Nombre;
+                    update.Apellido = request.Apellido;
+                    update.Correo = request.Correo;
+				_context.Entry(update).State = EntityState.Modified;
+                    _context.SaveChanges();
+					//_context.Empleados.Update(newEmpleado);
                 }
             } catch(Exception ex)
             {
 				throw new Exception (ex.Message);
+            }
+        }
+
+
+		public void Delete (int id)
+		{
+            try
+            {
+                Empleados empleado = new();
+                using (var _context = new AppDBCContext())
+                {
+                    empleado = _context.Empleados.Find(id);
+                    _context.Empleados.Remove(empleado);
+                    _context.SaveChanges();
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
             }
         }
     }
